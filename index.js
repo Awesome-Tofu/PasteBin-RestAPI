@@ -82,7 +82,7 @@ app.get('/paste', (req, res) => {
         })
         .catch(error => {
             if (error.response) {
-                console.error('Error posting to SpaceB.in:', error.message);
+                console.error('Error posting to SpaceB.in:', error);
                 console.error('Error details:', error.response.data);
                 res.status(500).json({
                     error: error.response
@@ -91,7 +91,7 @@ app.get('/paste', (req, res) => {
                 res.status(500).json({
                     error: error.message
                 });
-                console.error('Error posting to SpaceB.in:', error.message);
+                console.error('Error posting to SpaceB.in:', error);
             }
         });
 })
